@@ -61,8 +61,13 @@ namespace blogsa
             app.UseMvc(routes =>
             {
                 routes.MapRoute("pages", "page/{name}", new {
-                    controller = "Page",
-                    action = "Get"
+                    controller = "Content",
+                    action = "Page"
+                });
+
+                routes.MapRoute("posts", "post/{name}", new {
+                    controller = "Content",
+                    action = "Post"
                 });
 
                 routes.MapRoute(
