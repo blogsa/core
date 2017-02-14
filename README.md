@@ -12,4 +12,4 @@ We have made a deployment file to test your own blog on Heroku! It is easy. Just
 
 Sample Blog repository is also [here](https://github.com/blogsa/blog).
 
-Help us to spread and develop this project faster and greater. 😊
+Help us to spread and develop this project faster and greater. 😉
