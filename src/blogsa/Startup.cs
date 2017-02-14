@@ -40,6 +40,9 @@ namespace blogsa
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             Console.WriteLine("Configure");
+
+            Settings.RepositoryUrl = Configuration.GetSection("RepositoryUrl").Value;
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -68,7 +71,7 @@ namespace blogsa
             });
 
             var git = new GitService();
-            git.Clone("https://github.com/blogsa/blog.git");
+            git.Clone(Settings.RepositoryUrl);
         }
     }
 }
