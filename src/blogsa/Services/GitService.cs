@@ -90,7 +90,7 @@ namespace blogsa
                         }
                         if (authorMatch.Success)
                         {
-                            var author = templateMatch.Groups["author"].Value.Split(',');
+                            var author = authorMatch.Groups["author"].Value.Split(',');
                             data.Author = $"{author[0]}".Trim();
                             if(author.Length > 1)
                             {
@@ -98,6 +98,9 @@ namespace blogsa
                             }
                         }
 
+                        var cleanContent = new Regex(@"---(\n+(.+))+[^-]---((\n)+)[^\w]");
+                        data.Content = cleanContent.Replace(data.Content, string.Empty);
+                        data.Content = data.Content.Replace("---\n---", string.Empty);
                         DataService.Instance.Posts.Add(data);
                     }
                 }
@@ -157,6 +160,10 @@ namespace blogsa
                         {
                             //data.Author = templateMatch.Groups["author"].Value;
                         }
+
+                        var cleanContent = new Regex(@"---(\n+(.+))+[^-]---((\n)+)[^\w]");
+                        data.Content = cleanContent.Replace(data.Content, string.Empty);
+                        data.Content = data.Content.Replace("---\n---", string.Empty);
 
                         DataService.Instance.Pages.Add(data);
                     }
