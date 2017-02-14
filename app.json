@@ -1,0 +1,10 @@
+{
+    "name": "blogsa - blog",
+    "description": "Turn your git repos to blog!",
+    "website": "http://www.blogsa.io/",
+    "repository": "https://github.com/blogsa/core",
+    "keywords": ["aspnet core", "blogsa", "blog", "aspnet core mvc", "aspnet core heroku", "heroku"],
+    "buildpacks": [{
+        "url": "https://github.com/se/heroku-core"
+    }]
+}
