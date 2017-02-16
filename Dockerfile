@@ -1,6 +1,6 @@
 FROM microsoft/dotnet:1.1.0-sdk-projectjson
 
-COPY . /app
+COPY ./src/blogsa /app
 
 WORKDIR /app
 
