@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  blogsa:
+    image: blogsa
+    build:
+      context: .
+      dockerfile: Dockerfile
